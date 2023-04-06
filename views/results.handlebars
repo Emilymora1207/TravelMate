@@ -4,12 +4,13 @@
     <div class="event-details">
         <h3>{{event.name}}</h3>
         <p>Date: {{ event.dates.start.localDate}}</p>
-        <p>Description: {{ event.classification.genre.name}}</p>
+        <p>Description: {{ event.classifications.0.genre.name}}</p>
         <p>Venue: {{ event._embedded.venues.0.name}}</p>
         <p>City: {{ event._embedded.venues.0.city.name}},
             {{event._embedded.venues.0.state.stateCode}}</p>
         <a href="{{event.url}}">Click here for more information!</a>
-        <button class="saveBtn" data-image="{{event.images.0.url}}" data-city="{{event._embedded.venues.0.city.name}}">Save</button>
+        <button class="saveBtn" data-image="{{event.images.0.url}}"
+            data-city="{{event._embedded.venues.0.city.name}}">Save</button>
     </div>
 </section>
 {{/each}}
